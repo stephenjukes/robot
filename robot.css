@@ -1,0 +1,204 @@
+:root {
+  --main-color: magenta;
+  --feature-color: purple;
+}
+
+body {
+  text-align: center;
+}
+
+div {
+  border-radius: 7px;
+}
+
+#robot {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+}
+
+.arm, .leg, #control-panel {
+  background: var(--main-color); 
+  border: 1px solid var(--feature-color);
+}
+
+.eye, #nose, #mouth {
+  background: var(--feature-color);
+}
+
+.rotatable {
+  position: relative;
+  margin: 2px auto;
+  background: var(--feature-color);
+}
+
+.rotatable .front, .back {
+  background: var(--main-color);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.rotatable .back {
+  visibility: hidden;
+}
+
+.orbit { 
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+}
+
+.y-center-orbit {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arm-orbit {
+  height: 100%;
+  width: 150%;
+}
+
+#head-container #head, #body, #legs {
+  height: 150px;
+  width: 150px;
+}
+
+#head-container {
+  position: relative;
+}
+
+#head {
+  /* Absolute positioning is necessary to anchor head to the body during nodding behaviour.
+  Replacing the relative positioning then requires that the head be centered with left and right positioning */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#face {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#eyes {
+  display: flex;
+  justify-content: space-around;
+  height: 14%;
+  width: 100%;
+}
+
+.eye {
+  height: 100%;
+  width: 14%;
+}
+
+#nose {
+  height: 14%;
+  width: 14%;
+}
+
+#mouth {
+  height: 14%;
+  width: 50%;
+}
+
+#body {
+  display: flex;
+  /* justify-content: space-between; */
+  /* position: relative; */
+}
+
+#chest-cavity {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* height: 100%;
+  width: 100%; */
+  text-align: center;
+  background: #222;
+  z-index: 0;
+}
+
+#door-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#control-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.button {
+  /* display: inline-block; */
+  height: 20%;
+  width: 20%;
+  margin: 5%;
+  border-radius: 100%;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button1 { background: blue; }
+.button2 { background: red; }
+.button3 { background: green; }
+.button4 { background: orange; }
+.button5 { background: lightblue; }
+.button6 { background: lightsalmon; }
+.button7 { background: tomato; }
+.button8 { background: yellow; }
+.button9 { background: teal; }
+
+.arm, .leg {
+  height: 100%;
+  width: 30px;
+  border-radius: 20px;
+  transform-origin: top;
+}
+
+#legs {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#balloon-structure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  z-index: 5;
+}
+
+#balloon {
+  transform: translateX(-50%);
+  transform: rotate(-45deg);
+  height:50%;
+  width: 50%;
+  border-radius: 50% 50% 50% 20%;
+  background: rgb(228, 14, 103);
+}
+
+#string {
+  height: 50%;
+  width: 1px;
+  background: gray;
+}
